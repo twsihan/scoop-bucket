@@ -1,0 +1,27 @@
+{
+    "homepage": "https://nginx.org",
+    "version": "1.17.0",
+    "license": "BSD-2-Clause",
+    "url": "https://nginx.org/download/nginx-1.17.0.zip",
+    "hash": "7d59dd71d9ea86b765e91db148ec60c7942918317415373e2855c3bfe8ad0033",
+    "extract_dir": "nginx-1.17.0",
+    "persist": [
+        "conf",
+        "html",
+        "logs",
+        "temp"
+    ],
+    "env_set": {
+        "NGINX_HOME": "$dir"
+    },
+    "bin": "nginx.exe",
+    "notes": "To use the correct configuration run 'nginx -p \"$env:NGINX_HOME\"' or 'nginx -p \"%NGINX_HOME%\"'",
+    "checkver": {
+        "url": "https://nginx.org/en/CHANGES",
+        "re": "Changes with nginx ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://nginx.org/download/nginx-$version.zip",
+        "extract_dir": "nginx-$version"
+    }
+}
